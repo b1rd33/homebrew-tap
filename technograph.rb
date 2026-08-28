@@ -5,8 +5,8 @@
 class Technograph < Formula
   desc "Conservative HTTP-only technographic detection CLI"
   homepage "https://github.com/b1rd33/technograph"
-  url "https://github.com/b1rd33/technograph/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "f635193b4d060f16ad2013e1d338fd8bd8d7f626b3f9021b209aad2f6669438f"
+  url "https://github.com/b1rd33/technograph/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "9afbdc20886f0c955411c1fe17096ea090a32ad19da250a04d606440ad4e2a51"
   license "MIT"
 
   depends_on "go" => :build
