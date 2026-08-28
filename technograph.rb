@@ -5,8 +5,8 @@
 class Technograph < Formula
   desc "Conservative HTTP-only technographic detection CLI"
   homepage "https://github.com/b1rd33/technograph"
-  url "https://github.com/b1rd33/technograph/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "a8c4760520032085b1e4f01f1b7fc8b8a3ca52fa539a46841282026af371ce9e"
+  url "https://github.com/b1rd33/technograph/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "d4be6914bac80be31e7fd77d28b2475a091b84154059577896ea54bfb6e8c056"
   license "MIT"
 
   depends_on "go" => :build
@@ -15,8 +15,8 @@ class Technograph < Formula
     ldflags = %W[
       -s -w
       -X github.com/b1rd33/technograph/internal/buildinfo.Version=#{version}
-      -X github.com/b1rd33/technograph/internal/buildinfo.Commit=5b39178
-      -X github.com/b1rd33/technograph/internal/buildinfo.Date=2026-08-27T11:18:04Z
+      -X github.com/b1rd33/technograph/internal/buildinfo.Commit=69f077b
+      -X github.com/b1rd33/technograph/internal/buildinfo.Date=2026-08-28T14:19:30Z
     ]
     system "go", "build", "-trimpath", "-ldflags", ldflags.join(" "), "-o", bin/"technograph", "./cmd/technograph"
     system "go", "build", "-trimpath", "-ldflags", ldflags.join(" "),
@@ -27,6 +27,7 @@ class Technograph < Formula
     assert_match "technograph #{version}", shell_output("#{bin}/technograph --version")
     assert_match "technograph #{version}", shell_output("#{bin}/technograph-mcp --version")
     assert_match "Usage: technograph scan", shell_output("#{bin}/technograph scan --help")
+    assert_match "Technograph evidence report", shell_output("#{bin}/technograph explain https://invalid.example")
     assert_match "Usage: technograph-mcp", shell_output("#{bin}/technograph-mcp --help")
     assert_match '"status": "ok"', shell_output("#{bin}/technograph validate example.com")
   end
