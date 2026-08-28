@@ -15,8 +15,8 @@ class Technograph < Formula
     ldflags = %W[
       -s -w
       -X github.com/b1rd33/technograph/internal/buildinfo.Version=#{version}
-      -X github.com/b1rd33/technograph/internal/buildinfo.Commit=5fde542
-      -X github.com/b1rd33/technograph/internal/buildinfo.Date=2026-08-28T14:30:16Z
+      -X github.com/b1rd33/technograph/internal/buildinfo.Commit=1bfb5cd
+      -X github.com/b1rd33/technograph/internal/buildinfo.Date=2026-08-28T14:50:02Z
     ]
     system "go", "build", "-trimpath", "-ldflags", ldflags.join(" "), "-o", bin/"technograph", "./cmd/technograph"
     system "go", "build", "-trimpath", "-ldflags", ldflags.join(" "),
