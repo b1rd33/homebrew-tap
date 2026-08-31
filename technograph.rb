@@ -5,8 +5,8 @@
 class Technograph < Formula
   desc "Conservative HTTP-only technographic detection CLI"
   homepage "https://github.com/b1rd33/technograph"
-  url "https://github.com/b1rd33/technograph/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "425792dd6f55718121749994bb286388b3c17b5d8e2756df588b71e3b890d46f"
+  url "https://github.com/b1rd33/technograph/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "3e281fe21386215315ee3d2362ad19b8cb6d252f0df9b77050c478cc2c6163b8"
   license "MIT"
 
   depends_on "go" => :build
@@ -15,8 +15,8 @@ class Technograph < Formula
     ldflags = %W[
       -s -w
       -X github.com/b1rd33/technograph/internal/buildinfo.Version=#{version}
-      -X github.com/b1rd33/technograph/internal/buildinfo.Commit=16a81ba
-      -X github.com/b1rd33/technograph/internal/buildinfo.Date=2026-08-30T17:43:12Z
+      -X github.com/b1rd33/technograph/internal/buildinfo.Commit=70adf12
+      -X github.com/b1rd33/technograph/internal/buildinfo.Date=2026-08-31T09:10:40Z
     ]
     system "go", "build", "-trimpath", "-ldflags", ldflags.join(" "), "-o", bin/"technograph", "./cmd/technograph"
     system "go", "build", "-trimpath", "-ldflags", ldflags.join(" "),
