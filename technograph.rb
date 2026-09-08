@@ -3,10 +3,10 @@
 
 # Formula for the Technograph CLI and its local MCP server.
 class Technograph < Formula
-  desc "Conservative HTTP-only technographic detection CLI"
+  desc "Evidence-first technographic detection CLI with hybrid browser scanning"
   homepage "https://github.com/b1rd33/technograph"
-  url "https://github.com/b1rd33/technograph/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "afdd77d66da56d4f02fed7fd56afd73c38ab6ab10e56cbc05188f6b127870400"
+  url "https://github.com/b1rd33/technograph/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "3dfec62ad4a61b9b08da28698488a4831d7e3260f1f1b406c60cbb169cb36d5c"
   license "MIT"
 
   depends_on "go" => :build
@@ -15,8 +15,8 @@ class Technograph < Formula
     ldflags = %W[
       -s -w
       -X github.com/b1rd33/technograph/internal/buildinfo.Version=#{version}
-      -X github.com/b1rd33/technograph/internal/buildinfo.Commit=881439c
-      -X github.com/b1rd33/technograph/internal/buildinfo.Date=2026-08-31T11:45:57Z
+      -X github.com/b1rd33/technograph/internal/buildinfo.Commit=729e47d
+      -X github.com/b1rd33/technograph/internal/buildinfo.Date=2026-09-08T19:49:00Z
     ]
     system "go", "build", "-trimpath", "-ldflags", ldflags.join(" "), "-o", bin/"technograph", "./cmd/technograph"
     system "go", "build", "-trimpath", "-ldflags", ldflags.join(" "),
