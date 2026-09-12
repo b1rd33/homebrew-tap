@@ -5,21 +5,21 @@
 class TgctlGo < Formula
   desc "Go port of Python tgctl: single static `tg` binary for Telegram"
   homepage "https://github.com/b1rd33/tgctl-go"
-  version "0.1.9"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/b1rd33/tgctl-go/releases/download/v0.1.9/tgctl-go_0.1.9_darwin_x86_64.tar.gz"
-      sha256 "e7e34b9ab4ef43fb6ca53b070a74374fd03b503edd719bf12ed5cd3fb845f926"
+      url "https://github.com/b1rd33/tgctl-go/releases/download/v0.2.0/tgctl-go_0.2.0_darwin_x86_64.tar.gz"
+      sha256 "ed6e1c60f3ea26902b9396cac45eced22109504a92fc81d786bca7e737b5d180"
 
       define_method(:install) do
         bin.install "tg"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/b1rd33/tgctl-go/releases/download/v0.1.9/tgctl-go_0.1.9_darwin_arm64.tar.gz"
-      sha256 "8d56b7f2c46b2aaf50c2028164a9b9f32283e7d75b202b7c790a5a6bc8e4f2b7"
+      url "https://github.com/b1rd33/tgctl-go/releases/download/v0.2.0/tgctl-go_0.2.0_darwin_arm64.tar.gz"
+      sha256 "001c0bb2ec0fdbe16706b827117df810627970adbe6f9dd4362ad51293610e22"
 
       define_method(:install) do
         bin.install "tg"
@@ -29,15 +29,15 @@ class TgctlGo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/b1rd33/tgctl-go/releases/download/v0.1.9/tgctl-go_0.1.9_linux_x86_64.tar.gz"
-      sha256 "c3cea34d16d559f51b072231172729f5a9d8ceba1a4c64794542a9b10da06b18"
+      url "https://github.com/b1rd33/tgctl-go/releases/download/v0.2.0/tgctl-go_0.2.0_linux_x86_64.tar.gz"
+      sha256 "872e7be160bf8697f7efb36fc0e6402e3fa48f1414f4c3b8d6868731373f8a05"
       define_method(:install) do
         bin.install "tg"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/b1rd33/tgctl-go/releases/download/v0.1.9/tgctl-go_0.1.9_linux_arm64.tar.gz"
-      sha256 "a7bc1ff8e4c4cb4f71ebb94a248b112c6fb247e2f80509add074225d47bf917e"
+      url "https://github.com/b1rd33/tgctl-go/releases/download/v0.2.0/tgctl-go_0.2.0_linux_arm64.tar.gz"
+      sha256 "96770872ac6aaf4e709aca47168e88f7f3144010db726eb5d944d78aa8d01aaf"
       define_method(:install) do
         bin.install "tg"
       end
